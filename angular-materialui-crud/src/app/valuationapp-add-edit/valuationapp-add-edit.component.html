@@ -1,0 +1,33 @@
+<p>valuation application form</p>
+
+<form [formGroup]="valuationForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Credit Requested</mat-label>
+                <input matInput type="text" placeholder="Ex. 20000000" formControlName="amountofcreditrequest">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Requested By</mat-label>
+                <input matInput type="text" placeholder="Ex. MSME Retail" formControlName="requestedbyname">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Applicant's Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Biruk Abel" formControlName="applicantname">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Remark</mat-label>
+                <textarea matInput type="text" placeholder="Ex. This is a valuation request for property valuation..." formControlName="remark"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>
